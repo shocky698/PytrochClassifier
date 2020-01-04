@@ -1,0 +1,3 @@
+MODEL_NAME = 'conv2_layer_64x64'
+BATCH_SIZE = 256
+N_EPOCHS = 3
