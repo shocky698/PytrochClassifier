@@ -7,6 +7,7 @@ from dataloader import notMNIST
 import matplotlib.pyplot as plt
 from parameters import MODEL_NAME, N_EPOCHS, BATCH_SIZE
 from datetime import datetime
+from torchnet.logger import meterlogger
 
 root = os.path.dirname(__file__)
 
@@ -63,3 +64,4 @@ plt.plot(np.array(range(1, N_EPOCHS + 1)), loss_history)
 plt.xlabel('Iterations')
 plt.ylabel('Loss')
 plt.show()
+

@@ -29,7 +29,7 @@ class notMNIST(Dataset):
 					img_path = os.path.join(folder_path, ims)
 					Images.append(np.array(imread(img_path)))
 					Y.append(ord(folder) - 65)  # Folders are A-J so labels will be 0-9
-					print(max(Y), min(Y))
+					#print(max(Y), min(Y))
 				except:
 					# Some images in the dataset are damaged
 					print("File {}/{} is broken".format(folder, ims))

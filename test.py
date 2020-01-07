@@ -12,12 +12,18 @@ test_loader = DataLoader(test_dataset, batch_size=1, shuffle=True)
 classifier = torch.load('models/{}.pt'.format(MODEL_NAME)).eval()
 correct = 0
 
+
+
 for _, data in enumerate(test_loader, 0):
 	test_x, test_y = data
+	print(test_x)
 	pred = classifier.forward(test_x)
 	y_hat = np.argmax(pred.data)
+	#print(y_hat)
 	if y_hat == test_y:
 		correct += 1
+		#print(y_hat)
+
 #print(test_dataset[0])
 #image = test_dataset[0]
 #image = np.array(image)
@@ -26,4 +32,9 @@ for _, data in enumerate(test_loader, 0):
 #plt.show()
 print("Accuracy={}".format(correct / len(test_dataset)))
 
+#y_hat = classifier(test_x[0])
+
+#pred1 = classifier.forward(test_x[0])
+#y_hat1 = np.argmax(pred1.data)
+#print(y_hat1)
 
