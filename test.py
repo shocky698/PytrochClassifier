@@ -16,7 +16,6 @@ correct = 0
 
 for _, data in enumerate(test_loader, 0):
 	test_x, test_y = data
-	print(test_x)
 	pred = classifier.forward(test_x)
 	y_hat = np.argmax(pred.data)
 	#print(y_hat)

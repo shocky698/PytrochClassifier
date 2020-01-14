@@ -16,7 +16,7 @@ train_dataset = notMNIST(os.path.join(root, 'Dataset/Train'))
 print("Loaded data")
 
 # Creating a dataloader
-train_loader = DataLoader(dataset=train_dataset, batch_size=256, shuffle=True)
+train_loader = DataLoader(dataset=train_dataset, batch_size=100, shuffle=True)
 
 # Instantiating the model, loss function and optimizer
 net = Model()
@@ -56,7 +56,7 @@ for epoch in range(1, N_EPOCHS + 1):
 	train(epoch)
 
 # Saving the model
-torch.save(net, 'models/{}_{}.pt'.format(MODEL_NAME, datetime))
+torch.save(net, 'models/{}.pt'.format(MODEL_NAME))
 print("Saved model...")
 
 # Plotting loss vs number of epochs
